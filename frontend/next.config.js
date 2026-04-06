@@ -23,8 +23,11 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  // Enable static export
+  // Enable static export — next build handles export when output: 'export' is set
   output: 'export',
+
+  // Output static files directly to docs/ in repo root
+  distDir: '../docs',
 
   // Enable React Strict Mode
   reactStrictMode: true,
