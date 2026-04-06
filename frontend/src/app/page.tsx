@@ -55,6 +55,20 @@ export default function Home() {
 
           <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
             <CardHeader>
+              <CardTitle>Health Projects</CardTitle>
+              <CardDescription>
+                Real-world health technology projects — TwoBreath and the EHDS Demo.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="mt-auto pt-0">
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/projects">View Projects</Link>
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+            <CardHeader>
               <CardTitle>Get in Touch</CardTitle>
               <CardDescription>
                 Have questions or want to collaborate? Reach out to us.

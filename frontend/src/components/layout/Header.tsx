@@ -6,6 +6,8 @@ import { useState } from 'react';
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Journey', href: '/journey' },
+  { name: 'Health Projects', href: '/projects' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -15,7 +17,10 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="text-xl font-bold text-indigo-600">Longevity Coach</span>
@@ -49,7 +54,11 @@ export default function Header() {
         </div>
       </nav>
       {/* Mobile menu, show/hide based on menu open state. */}
-      <div className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`} role="dialog" aria-modal="true">
+      <div
+        className={`lg:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
+        role="dialog"
+        aria-modal="true"
+      >
         <div className="fixed inset-0 z-50" />
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
