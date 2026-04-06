@@ -57,7 +57,8 @@ type FormFieldProps<TFieldValues extends FieldValues> = {
   maxLength?: number;
   readOnly?: boolean;
   autoFocus?: boolean;
-  onChange?: (value: unknown) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange?: (value: any) => void;
   onBlur?: () => void;
   onFocus?: () => void;
 };
@@ -99,14 +100,8 @@ export function FormField<TFieldValues extends FieldValues>({
   const fieldState = getFieldState(error);
   const errorMessage = getFieldError(error);
 
-  const renderInput = (field: {
-    onChange: (...args: unknown[]) => void;
-    onBlur: () => void;
-    value: unknown;
-    name: string;
-    ref?: unknown;
-    [key: string]: unknown;
-  }) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const renderInput = (field: any) => {
     const { ref, ...fieldProps } = field;
     const commonProps = {
       ...fieldProps, // Spread field props first to ensure proper event handlers are included
