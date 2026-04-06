@@ -1,4 +1,4 @@
-# Longevity Coach
+# Longevity AI Coach
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -20,24 +20,28 @@ A comprehensive health and wellness platform focused on longevity and preventive
 ## 🌟 Key Features
 
 ### 🔍 Health Insights
+
 - **Biomarker Tracking**: Monitor key health indicators over time
 - **Trend Analysis**: Visualize health data with interactive charts
 - **Reference Ranges**: Compare results against optimal health ranges
 - **Risk Assessment**: Identify potential health risks early
 
 ### 🎯 Personalized Guidance
+
 - **Custom Recommendations**: Tailored health and lifestyle suggestions
 - **Goal Setting**: Define and track health objectives
 - **Actionable Insights**: Data-driven guidance for improvement
 - **Progress Tracking**: Monitor improvements over time
 
 ### 📊 Data Integration
+
 - **Lab Result Import**: Connect with major laboratories
 - **Wearable Sync**: Import data from health devices
 - **FHIR Support**: Standardized health data exchange
 - **Secure Storage**: HIPAA-compliant data management
 
 ### 📱 User Experience
+
 - **Responsive Design**: Works on all devices
 - **Dark/Light Mode**: Choose your preferred theme
 - **Data Export**: Download your health records
@@ -56,6 +60,7 @@ A comprehensive health and wellness platform focused on longevity and preventive
 ### Local Development Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/longevitycoach/longevitycoach.git
    cd longevitycoach
@@ -66,6 +71,7 @@ A comprehensive health and wellness platform focused on longevity and preventive
    - Recommended: Use Windsurf IDE for the best development experience
 
 3. **Install dependencies**
+
    ```bash
    npm install
    cd frontend
@@ -74,6 +80,7 @@ A comprehensive health and wellness platform focused on longevity and preventive
    ```
 
 4. **Configure environment**
+
    ```bash
    # Set up 1Password CLI
    eval $(op signin)
@@ -81,17 +88,20 @@ A comprehensive health and wellness platform focused on longevity and preventive
    ```
 
 5. **Start the development server**
+
    ```bash
    # From the project root
    npm run dev
    ```
+
    The application will be available at [http://localhost:3000](http://localhost:3000)
 
 6. **Run tests**
+
    ```bash
    # Run all tests
    npm test
-   
+
    # Run specific test files
    npm test -- path/to/test/file.test.ts
    ```
@@ -133,6 +143,7 @@ longevitycoach/
 ## 🛠️ Development
 
 ### Code Style
+
 - [Prettier](https://prettier.io/) for consistent code formatting
 - [ESLint](https://eslint.org/) for code quality and best practices
 - [TypeScript](https://www.typescriptlang.org/) for type safety
@@ -194,13 +205,16 @@ The [Memory Bank](memory-bank/README.md) is our central knowledge repository con
 - [Planning Documents](memory-bank/planning/)
 
 All significant decisions and architectural changes should be documented here.
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
 2. Make your changes and commit them with a descriptive message
 3. Push your branch and open a pull request
 
 ### Testing
+
 - Unit tests: `npm test`
 
 ## 🤝 Contributing
@@ -248,13 +262,13 @@ For support or questions, please open an issue or contact us at support@longevit
 
 ### Key Metrics
 
-| Category | Status |
-|----------|--------|
+| Category            | Status               |
+| ------------------- | -------------------- |
 | **Sprint Progress** | Sprint 1 in progress |
-| **Open Issues** | 11 |
-| **Closed Issues** | 0 |
-| **Test Coverage** | TBD |
-| **Latest Release** | Pre-release |
+| **Open Issues**     | 11                   |
+| **Closed Issues**   | 0                    |
+| **Test Coverage**   | TBD                  |
+| **Latest Release**  | Pre-release          |
 
 ### Recent Updates
 
@@ -290,7 +304,7 @@ This project uses **GitHub's version control system** as the primary backup mech
    ```bash
    # View file history
    git log -- path/to/file
-   
+
    # Restore a specific version
    git checkout <commit-hash> -- path/to/file
    ```
@@ -311,7 +325,7 @@ This project uses **GitHub's version control system** as the primary backup mech
    ```bash
    # Install root dependencies (Husky, lint-staged)
    npm install
-   
+
    # Install frontend dependencies
    cd frontend
    npm install
@@ -323,7 +337,7 @@ This project uses **GitHub's version control system** as the primary backup mech
    ```bash
    # Copy the example environment file
    cp .env.local.example .env.local
-   
+
    # Update the environment variables in .env.local as needed
    ```
 
@@ -403,6 +417,7 @@ The application supports the latest versions of:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 - GitHub CLI
 
 ### Installation
@@ -478,7 +493,7 @@ We use 1Password for secure secret management with biometric authentication supp
    # 1Password SSH Agent
    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
    export OP_BIOMETRIC_UNLOCK_ENABLED=true
-   
+
    # 1Password signin alias
    alias opsignin='eval $(op signin)'
    ```
@@ -488,7 +503,7 @@ We use 1Password for secure secret management with biometric authentication supp
    ```bash
    # For zsh
    source ~/.zshrc
-   
+
    # OR for bash
    # source ~/.bash_profile
    ```
