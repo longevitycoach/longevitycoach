@@ -3,16 +3,16 @@
 import React from 'react';
 import { Controller, FieldValues, Path, useFormContext } from 'react-hook-form';
 
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import {
+  Input,
+  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
+  Textarea,
+} from '@/components/ui';
 import { type FieldErrorType, getFieldError, getFieldState } from '@/lib/form-utils';
 import { cn } from '@/lib/utils';
 
@@ -57,7 +57,8 @@ type FormFieldProps<TFieldValues extends FieldValues> = {
   maxLength?: number;
   readOnly?: boolean;
   autoFocus?: boolean;
-  onChange?: (value: unknown) => void;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  onChange?: (value: any) => void;
   onBlur?: () => void;
   onFocus?: () => void;
 };
@@ -99,15 +100,19 @@ export function FormField<TFieldValues extends FieldValues>({
   const fieldState = getFieldState(error);
   const errorMessage = getFieldError(error);
 
-  const renderInput = (field: Record<string, unknown> & { ref?: unknown }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { ref: _ref, ...fieldProps } = field;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const renderInput = (field: any) => {
+    const { ref, ...fieldProps } = field;
     const commonProps = {
       ...fieldProps,
       id: name,
+      name,
       placeholder,
       disabled,
       required,
+      'aria-invalid': fieldState.invalid ? 'true' : 'false',
+      'aria-describedby': description ? `${name}-description` : undefined,
+      value: field.value || '',
       autoComplete,
       minLength,
       maxLength,
@@ -119,7 +124,7 @@ export function FormField<TFieldValues extends FieldValues>({
       autoFocus,
       className: cn(
         'w-full',
-        fieldState.invalid && 'border-destructive focus-visible:ring-destructive',
+        fieldState.invalid ? 'border-destructive focus-visible:ring-destructive' : '',
         className
       ),
       onChange: (
@@ -143,7 +148,7 @@ export function FormField<TFieldValues extends FieldValues>({
       case 'select':
         return (
           <Select onValueChange={field.onChange} value={field.value || ''} disabled={disabled}>
-            <SelectTrigger className={cn('w-full', fieldState.invalid && 'border-destructive')}>
+            <SelectTrigger className={cn('w-full', fieldState.invalid ? 'border-destructive' : '')}>
               <SelectValue placeholder={placeholder} />
             </SelectTrigger>
             <SelectContent>
@@ -171,8 +176,8 @@ export function FormField<TFieldValues extends FieldValues>({
           htmlFor={name}
           className={cn(
             'text-sm font-medium leading-none',
-            fieldState.invalid && 'text-destructive',
-            labelClassName
+            fieldState.invalid ? 'text-destructive' : '',
+            labelClassName as string | undefined
           )}
         >
           {label}
@@ -189,44 +194,3 @@ export function FormField<TFieldValues extends FieldValues>({
     </div>
   );
 }
-
-const FormInput = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ name, className, ...props }, ref) => {
-    const { field } = useFormField();
-    return <Input id={name} className={cn('w-full', className)} {...field} {...props} ref={ref} />;
-  }
-);
-FormInput.displayName = 'FormInput';
-
-const FormTextarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ name, className, ...props }, ref) => {
-    const { field } = useFormField();
-    return (
-      <Textarea id={name} className={cn('w-full', className)} {...field} {...props} ref={ref} />
-    );
-  }
-);
-FormTextarea.displayName = 'FormTextarea';
-
-const FormSelect = React.forwardRef<HTMLSelectElement, SelectProps>(
-  ({ options, placeholder, className, ...props }, _ref) => {
-    const { field } = useFormField();
-    return (
-      <Select onValueChange={field.onChange} defaultValue={field.value} {...props}>
-        <SelectTrigger className={className}>
-          <SelectValue placeholder={placeholder} />
-        </SelectTrigger>
-        <SelectContent>
-          {options.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
-    );
-  }
-);
-FormSelect.displayName = 'FormSelect';
-
-export { FormField, FormInput, FormSelect, FormTextarea, useFormField };

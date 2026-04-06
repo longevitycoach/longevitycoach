@@ -143,17 +143,17 @@ export const getSlideById = async (id: string): Promise<Slide | null> => {
 
     return {
       id,
-      title: frontmatter.title || 'Untitled Slide',
-      description: frontmatter.description || '',
-      slideNumber: frontmatter.slide || 0,
+      title: (frontmatter.title as string) || 'Untitled Slide',
+      description: (frontmatter.description as string) || '',
+      slideNumber: (frontmatter.slide as number) || 0,
       path: `/presentation/slides/${id}`,
       content: mdxSource,
       metadata: {
-        created: frontmatter.created || new Date().toISOString(),
-        updated: frontmatter.updated || new Date().toISOString(),
-        authors: frontmatter.authors || [],
-        tags: frontmatter.tags || [],
-        status: frontmatter.status || 'draft',
+        created: (frontmatter.created as string) || new Date().toISOString(),
+        updated: (frontmatter.updated as string) || new Date().toISOString(),
+        authors: (frontmatter.authors as string[]) || [],
+        tags: (frontmatter.tags as string[]) || [],
+        status: ((frontmatter.status as string) || 'draft') as 'draft' | 'published' | 'archived',
       },
     };
   } catch (error) {

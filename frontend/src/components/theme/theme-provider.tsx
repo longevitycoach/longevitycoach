@@ -1,8 +1,10 @@
 'use client';
 
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { type ThemeProviderProps } from 'next-themes/dist/types';
-import * as React from 'react';
+import {
+  ThemeProvider as NextThemesProvider,
+  type ThemeProviderProps,
+  useTheme,
+} from 'next-themes';
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (
@@ -18,10 +20,4 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   );
 }
 
-export function useTheme() {
-  const context = React.useContext(NextThemesProvider);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-}
+export { useTheme };
