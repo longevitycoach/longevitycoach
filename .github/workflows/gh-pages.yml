@@ -46,11 +46,14 @@ jobs:
           cache: 'npm'
           cache-dependency-path: 'frontend/package-lock.json'
       
+      # Install dependencies (must run without NODE_ENV=production to include devDeps)
+      - name: Install dependencies
+        run: cd frontend && npm ci
+
       # Build the static site
       - name: Build static site
         run: |
           cd frontend
-          npm ci
           npm run build:static
           ls -la ../docs
         env:
