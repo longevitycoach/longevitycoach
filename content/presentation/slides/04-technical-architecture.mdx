@@ -1,0 +1,287 @@
+---
+title: "Technical Architecture"
+description: "In-depth look at the MCP-based technical architecture powering the Longevity AI Coach platform"
+created: 2025-06-23
+updated: 2025-06-23
+authors: [ma3u]
+tags: [presentation, technical, architecture, mcp]
+status: draft
+slide: 4
+---
+
+# Technical Architecture
+
+## MCP-Based System Overview
+
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8">
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+      <span className="text-xl">🧠</span>
+    </div>
+    <h3>Model Layer</h3>
+    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+      Core AI/ML models for health data analysis and prediction
+    </p>
+    <ul className="mt-3 space-y-2 text-sm">
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Predictive analytics engine</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Personalization algorithms</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Health risk assessment models</span>
+      </li>
+    </ul>
+  </div>
+
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+    <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+      <span className="text-xl">🔄</span>
+    </div>
+    <h3>Control Layer</h3>
+    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+      Orchestrates data flow and business logic
+    </p>
+    <ul className="mt-3 space-y-2 text-sm">
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Workflow management</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Data validation & processing</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>API gateway</span>
+      </li>
+    </ul>
+  </div>
+
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700">
+    <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+      <span className="text-xl">💻</span>
+    </div>
+    <h3>Presentation Layer</h3>
+    <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+      User interfaces and experience
+    </p>
+    <ul className="mt-3 space-y-2 text-sm">
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Web & mobile applications</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Dashboard & analytics</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">•</span>
+        <span>Notification system</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+## System Architecture Diagram
+
+<div className="mt-10 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+  <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+    {/* Client Layer */}
+    <div className="md:col-span-12 p-4 bg-white dark:bg-gray-700 rounded-lg shadow">
+      <h4 className="text-center font-medium">Client Applications</h4>
+      <div className="flex flex-wrap justify-center gap-4 mt-3">
+        <div className="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-md text-center">
+          <div className="text-2xl">📱</div>
+          <div className="text-xs mt-1">Mobile App</div>
+        </div>
+        <div className="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-md text-center">
+          <div className="text-2xl">🖥️</div>
+          <div className="text-xs mt-1">Web App</div>
+        </div>
+        <div className="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-md text-center">
+          <div className="text-2xl">⌚</div>
+          <div className="text-xs mt-1">Wearables</div>
+        </div>
+      </div>
+    </div>
+
+    {/* API Gateway */}
+    <div className="md:col-span-12 h-2 flex items-center justify-center">
+      <div className="h-full w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+    </div>
+    <div className="md:col-span-12 p-4 bg-green-50 dark:bg-green-900/20 rounded-lg shadow">
+      <h4 className="text-center font-medium">API Gateway</h4>
+      <div className="text-center text-sm mt-2 text-gray-600 dark:text-gray-400">
+        Authentication • Rate Limiting • Routing
+      </div>
+    </div>
+
+    {/* Microservices */}
+    <div className="md:col-span-12 h-2 flex items-center justify-center">
+      <div className="h-full w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+    </div>
+    <div className="md:col-span-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg shadow">
+      <h4 className="text-center font-medium">User Service</h4>
+      <div className="text-center text-xs mt-1 text-gray-600 dark:text-gray-400">
+        Authentication • Profiles • Preferences
+      </div>
+    </div>
+    <div className="md:col-span-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg shadow">
+      <h4 className="text-center font-medium">Health Data Service</h4>
+      <div className="text-center text-xs mt-1 text-gray-600 dark:text-gray-400">
+        Data Processing • Aggregation • Storage
+      </div>
+    </div>
+    <div className="md:col-span-4 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg shadow">
+      <h4 className="text-center font-medium">AI Engine</h4>
+      <div className="text-center text-xs mt-1 text-gray-600 dark:text-gray-400">
+        ML Models • Predictions • Recommendations
+      </div>
+    </div>
+
+    {/* Data Layer */}
+    <div className="md:col-span-12 h-2 flex items-center justify-center">
+      <div className="h-full w-0.5 bg-gray-300 dark:bg-gray-600"></div>
+    </div>
+    <div className="md:col-span-12 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg shadow">
+      <h4 className="text-center font-medium">Data Storage</h4>
+      <div className="flex flex-wrap justify-center gap-4 mt-3">
+        <div className="p-2 bg-white dark:bg-gray-700 rounded text-center">
+          <div className="text-sm font-mono">PostgreSQL</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">
+            Relational Data
+          </div>
+        </div>
+        <div className="p-2 bg-white dark:bg-gray-700 rounded text-center">
+          <div className="text-sm font-mono">MongoDB</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">
+            Document Store
+          </div>
+        </div>
+        <div className="p-2 bg-white dark:bg-gray-700 rounded text-center">
+          <div className="text-sm font-mono">S3</div>
+          <div className="text-xs text-gray-500 dark:text-gray-400">
+            File Storage
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+## Technology Stack
+
+<div className="mt-10">
+  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+    {/* Frontend */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">Frontend</div>
+      <ul className="space-y-1 text-sm">
+        <li>• Next.js / React</li>
+        <li>• TypeScript</li>
+        <li>• Tailwind CSS</li>
+        <li>• Redux Toolkit</li>
+      </ul>
+    </div>
+
+    {/* Backend */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">Backend</div>
+      <ul className="space-y-1 text-sm">
+        <li>• Node.js</li>
+        <li>• NestJS</li>
+        <li>• Python (ML)</li>
+        <li>• FastAPI</li>
+      </ul>
+    </div>
+
+    {/* AI/ML */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">AI/ML</div>
+      <ul className="space-y-1 text-sm">
+        <li>• TensorFlow</li>
+        <li>• PyTorch</li>
+        <li>• Scikit-learn</li>
+        <li>• Pandas/Numpy</li>
+      </ul>
+    </div>
+
+    {/* Data */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">Data</div>
+      <ul className="space-y-1 text-sm">
+        <li>• PostgreSQL</li>
+        <li>• MongoDB</li>
+        <li>• Redis</li>
+        <li>• S3</li>
+      </ul>
+    </div>
+
+    {/* DevOps */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">DevOps</div>
+      <ul className="space-y-1 text-sm">
+        <li>• Docker</li>
+        <li>• Kubernetes</li>
+        <li>• GitHub Actions</li>
+        <li>• AWS/GCP</li>
+      </ul>
+    </div>
+
+    {/* Security */}
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
+      <div className="text-center font-medium mb-2">Security</div>
+      <ul className="space-y-1 text-sm">
+        <li>• OAuth 2.0</li>
+        <li>• JWT</li>
+        <li>• HIPAA Compliance</li>
+        <li>• GDPR Ready</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+## Security & Compliance
+
+<div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700">
+    <h3>Data Protection</h3>
+    <ul className="mt-3 space-y-2">
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>End-to-end encryption for all data in transit and at rest</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>Regular security audits and penetration testing</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>Role-based access control (RBAC)</span>
+      </li>
+    </ul>
+  </div>
+
+  <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow border border-gray-100 dark:border-gray-700">
+    <h3>Compliance</h3>
+    <ul className="mt-3 space-y-2">
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>HIPAA compliant infrastructure</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>GDPR compliant data handling</span>
+      </li>
+      <li className="flex items-start">
+        <span className="text-green-500 mr-2">✓</span>
+        <span>SOC 2 Type II certification in progress</span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -3,13 +3,13 @@ title: "API Architecture"
 description: "Comprehensive documentation of the Longevity Coach API architecture"
 created: 2025-06-02
 updated: 2025-06-11
-authors: 
+authors:
   - name: Longevity Coach Team
     email: dev@longevitycoach.app
-status: active
-related: 
+status: approved
+related:
   - /architecture/database-architecture.md
-tags: 
+tags:
   - api
   - fhir
   - healthcare
@@ -19,6 +19,7 @@ tags:
 # API Architecture
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Base URL](#base-url)
 - [Authentication](#authentication)
@@ -35,6 +36,7 @@ tags:
 The Longevity Coach API is built following RESTful principles and implements the FHIR R4 standard with custom extensions for longevity optimization. The API provides secure access to health data, user management, and analytics features.
 
 ### Key Features
+
 - **FHIR R4 Compliance**: Full support for FHIR resources with custom extensions
 - **OAuth 2.0 with PKCE**: Secure authentication for web and mobile clients
 - **Real-time Updates**: WebSocket support for live data synchronization
@@ -66,13 +68,13 @@ client_id={client_id}
 
 ### SMART on FHIR Scopes
 
-| Scope | Description |
-|-------|-------------|
-| `patient/*.read` | Read access to all patient data |
-| `patient/*.write` | Write access to patient data |
-| `user/*.read` | Read user profile information |
-| `launch/patient` | Contextual launch for EHR integration |
-| `offline_access` | Request refresh tokens for long-lived access |
+| Scope             | Description                                  |
+| ----------------- | -------------------------------------------- |
+| `patient/*.read`  | Read access to all patient data              |
+| `patient/*.write` | Write access to patient data                 |
+| `user/*.read`     | Read user profile information                |
+| `launch/patient`  | Contextual launch for EHR integration        |
+| `offline_access`  | Request refresh tokens for long-lived access |
 
 ### Authentication Flow
 
@@ -103,9 +105,11 @@ Accept: application/fhir+json
 ```
 
 **Parameters**
+
 - `id`: The logical ID of the resource
 
 **Response**
+
 ```json
 {
   "resourceType": "Patient",
@@ -150,14 +154,14 @@ Authorization: Bearer {access_token}
 
 ### Supported Resources
 
-| Resource | Description | Operations |
-|----------|-------------|------------|
-| Patient | Individual receiving care | CRUD + search |
-| Observation | Clinical measurements | CRUD + search |
-| Condition | Health conditions | CRUD + search |
-| Goal | Health goals | CRUD + search |
-| Questionnaire | Assessment forms | CRUD + search |
-| QuestionnaireResponse | Form responses | CRUD + search |
+| Resource              | Description               | Operations    |
+| --------------------- | ------------------------- | ------------- |
+| Patient               | Individual receiving care | CRUD + search |
+| Observation           | Clinical measurements     | CRUD + search |
+| Condition             | Health conditions         | CRUD + search |
+| Goal                  | Health goals              | CRUD + search |
+| Questionnaire         | Assessment forms          | CRUD + search |
+| QuestionnaireResponse | Form responses            | CRUD + search |
 
 ### Custom Extensions
 
@@ -193,14 +197,14 @@ Authorization: Bearer {access_token}
 
 ### Common Error Codes
 
-| Status Code | Error Code | Description |
-|------------|------------|-------------|
-| 400 | `invalid-request` | Invalid request syntax |
-| 401 | `unauthorized` | Authentication required |
-| 403 | `forbidden` | Insufficient permissions |
-| 404 | `not-found` | Resource not found |
-| 429 | `too-many-requests` | Rate limit exceeded |
-| 500 | `internal-error` | Server error |
+| Status Code | Error Code          | Description              |
+| ----------- | ------------------- | ------------------------ |
+| 400         | `invalid-request`   | Invalid request syntax   |
+| 401         | `unauthorized`      | Authentication required  |
+| 403         | `forbidden`         | Insufficient permissions |
+| 404         | `not-found`         | Resource not found       |
+| 429         | `too-many-requests` | Rate limit exceeded      |
+| 500         | `internal-error`    | Server error             |
 
 ## Rate Limiting
 
@@ -252,6 +256,7 @@ X-RateLimit-Reset: 1623416400
 ## Testing
 
 ### Test Environment
+
 - **Base URL**: `https://api-sandbox.longevitycoach.app/v1`
 - **Test Client ID**: `test-client`
 - **Test User**: `testuser@longevitycoach.app`
@@ -261,7 +266,7 @@ X-RateLimit-Reset: 1623416400
 ```json
 {
   "resourceType": "Patient",
-  "name": [{"family": "Test", "given": ["User"]}],
+  "name": [{ "family": "Test", "given": ["User"] }],
   "birthDate": "1990-01-01",
   "gender": "unknown"
 }
@@ -285,14 +290,17 @@ https://api.longevitycoach.app/v1/api-docs
 ## Support
 
 For API support, please contact:
+
 - **Email**: api-support@longevitycoach.app
 - **Slack**: #api-support
 - **Documentation**: https://docs.longevitycoach.app/api
 
 ---
+
 Last Updated: June 11, 2025
 
 ### Blood Tests
+
 ```http
 POST /blood-tests
 Authorization: Bearer {token}
@@ -307,6 +315,7 @@ Content-Type: multipart/form-data
 ```
 
 ### Biomarkers
+
 ```http
 GET /patients/{id}/biomarkers?code=6690-2&start=2025-01-01&end=2025-12-31
 Authorization: Bearer {token}
@@ -316,23 +325,30 @@ Accept: application/fhir+json
 ## FHIR Resource Mappings
 
 ### Observation Resource
+
 ```json
 {
   "resourceType": "Observation",
   "id": "example",
   "status": "final",
-  "category": [{
-    "coding": [{
-      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-      "code": "laboratory"
-    }]
-  }],
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
   "code": {
-    "coding": [{
-      "system": "http://loinc.org",
-      "code": "6690-2",
-      "display": "Leukocytes [#/volume] in Blood by Automated count"
-    }]
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "6690-2",
+        "display": "Leukocytes [#/volume] in Blood by Automated count"
+      }
+    ]
   },
   "subject": {
     "reference": "Patient/example"
@@ -344,47 +360,56 @@ Accept: application/fhir+json
     "system": "http://unitsofmeasure.org",
     "code": "10*3/uL"
   },
-  "referenceRange": [{
-    "low": {
-      "value": 4.5,
-      "unit": "10*3/uL"
-    },
-    "high": {
-      "value": 11.0,
-      "unit": "10*3/uL"
-    },
-    "type": {
-      "coding": [{
-        "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
-        "code": "normal"
-      }]
+  "referenceRange": [
+    {
+      "low": {
+        "value": 4.5,
+        "unit": "10*3/uL"
+      },
+      "high": {
+        "value": 11.0,
+        "unit": "10*3/uL"
+      },
+      "type": {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
+            "code": "normal"
+          }
+        ]
+      }
     }
-  }]
+  ]
 }
 ```
 
 ## Rate Limiting
+
 - 1000 requests per 15 minutes per token
 - 10000 requests per 15 minutes per IP
 
 ## Error Responses
 
 ### 400 Bad Request
+
 ```json
 {
   "resourceType": "OperationOutcome",
-  "issue": [{
-    "severity": "error",
-    "code": "invalid",
-    "details": {
-      "text": "Invalid date format. Expected ISO 8601 format (YYYY-MM-DD)"
-    },
-    "expression": ["Observation.effectiveDateTime"]
-  }]
+  "issue": [
+    {
+      "severity": "error",
+      "code": "invalid",
+      "details": {
+        "text": "Invalid date format. Expected ISO 8601 format (YYYY-MM-DD)"
+      },
+      "expression": ["Observation.effectiveDateTime"]
+    }
+  ]
 }
 ```
 
 ### 401 Unauthorized
+
 ```json
 {
   "error": "invalid_token",
@@ -395,11 +420,13 @@ Accept: application/fhir+json
 ## Webhooks
 
 ### Events
+
 - `blood_test.received` - New lab result received
 - `blood_test.processed` - Lab result processed and available
 - `biomarker.alert` - Critical biomarker value detected
 
 ### Payload Example
+
 ```json
 {
   "event": "blood_test.processed",
@@ -413,11 +440,13 @@ Accept: application/fhir+json
 ```
 
 ## Versioning
+
 - API version in URL path (`/v1/...`)
 - Media type versioning with `Accept` header
 - Deprecation policy: 6 months notice for breaking changes
 
 ## Monitoring
+
 - Request/response logging (PII redacted)
 - Performance metrics (p95 latency < 200ms)
 - Error tracking and alerting

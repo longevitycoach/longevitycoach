@@ -1,0 +1,27 @@
+{
+  "startpage": {
+    "title": "Home",
+    "description": "Welcome to Longevity Coach - Your guide to optimal health and longevity",
+    "icon": "home"
+  },
+  "optimum": {
+    "title": "Optimal Metrics",
+    "description": "Comprehensive guide to optimal health metrics and biomarkers",
+    "icon": "bar-chart-2"
+  },
+  "journey": {
+    "title": "My Journey",
+    "description": "Personal health optimization journey and lessons learned",
+    "icon": "compass"
+  },
+  "projects": {
+    "title": "Health Projects",
+    "description": "Real-world health technology projects building the future of personal wellbeing",
+    "icon": "flask-conical"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with the Longevity Coach team",
+    "icon": "mail"
+  }
+}

@@ -1,6 +1,14 @@
+---
+title: "Issue 9: Static Site & Memory Bank Integration"
+description: "Implementation summary for Next.js static site setup and memory bank integration"
+created: 2025-06-04
+status: approved
+---
+
 ## Implementation Summary: Static Site & Memory Bank Integration
 
 ### ✅ Completed Tasks
+
 - **Static Site Development**
   - Set up Next.js 14 with TypeScript and Tailwind CSS
   - Implemented responsive layout with core components (Header, Footer, Navigation)
@@ -19,6 +27,7 @@
   - Added CONTRIBUTING guidelines
 
 ### 🔄 Current Status
+
 - **Build Status**: Fixing remaining build issues
   - Resolved TypeScript type errors in utils.ts
   - Fixing missing UI component imports
@@ -30,6 +39,7 @@
   - Updating documentation with expert methodologies
 
 ### 📋 Next Steps
+
 1. **Immediate**
    - [ ] Fix remaining build errors
    - [ ] Complete static export verification
@@ -46,9 +56,10 @@
    - [ ] Optimize for performance
 
 ### 🔗 Related
-- [Project Context](./memory-bank/project-context.md)
-- [Project Vision](./memory-bank/project-vision.md)
-- [Deployment Guide](./DEPLOYMENT.md)
+
+- [Project Context](../../project-context.md)
+- [Project Vision](../../project-vision.md)
 
 ## Status Update
+
 🚧 In Progress - Finalizing static export and content integration

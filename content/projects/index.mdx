@@ -1,0 +1,187 @@
+---
+title: "Health Projects"
+description: "Real-world health technology projects building the future of personal wellbeing and connected health"
+created: 2025-01-01
+updated: 2026-04-06
+authors: [ma3u]
+tags: [projects, health, technology, couples, EHDS, breathing, data]
+status: published
+---
+
+# Health Projects
+
+These are projects I'm actively building at the intersection of health science and technology — moving beyond research into real-world tools that help people live better.
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+{/* TwoBreath */}
+
+<div className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+  <div className="bg-gradient-to-br from-teal-800 to-teal-600 p-8 flex items-center justify-center min-h-[180px]">
+    <img
+      src="/assets/images/twobreath_icon.svg"
+      alt="TwoBreath logo"
+      width={96}
+      height={64}
+      className="opacity-90"
+    />
+  </div>
+  <div className="p-6">
+    <div className="flex items-center justify-between mb-3">
+      <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+        TwoBreath
+      </h2>
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+        Beta
+      </span>
+    </div>
+    <p className="text-sm text-teal-700 dark:text-teal-400 font-medium mb-3">
+      Couples Breathing Ritual App
+    </p>
+    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+      A daily breathing ritual app for couples that uses Apple Watch to measure
+      physiological synchrony — tracking heart rate, HRV, and respiratory
+      alignment between partners. Built around guided 7–15 minute sessions with
+      animated breathing visualization, shared poetry, and eye-contact rituals.
+    </p>
+    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-5">
+      <li className="flex items-start gap-2">
+        <span className="text-teal-500 mt-0.5">✦</span>Apple Watch HRV &amp;
+        sync score
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-teal-500 mt-0.5">✦</span>Multi-language: EN, DE,
+        JP
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-teal-500 mt-0.5">✦</span>CGM &amp; biomarker
+        integration (beta)
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-teal-500 mt-0.5">✦</span>Audio-first, breath-led
+        design
+      </li>
+    </ul>
+    <a
+      href="https://www.twobreath.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition-colors text-sm font-medium"
+      aria-label="Visit TwoBreath website"
+    >
+      Visit TwoBreath
+      <svg
+        className="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+{/* EHDS Demo */}
+
+<div className="rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+  <div className="bg-gradient-to-br from-blue-900 to-blue-700 p-8 flex flex-col items-center justify-center min-h-[180px] gap-3">
+    <div className="flex gap-2">
+      {["AT", "DE", "FR", "PL", "ES"].map((c) => (
+        <span
+          key={c}
+          className="px-2 py-1 bg-white/10 rounded text-white text-xs font-mono"
+        >
+          {c}
+        </span>
+      ))}
+    </div>
+    <p className="text-blue-200 text-xs tracking-widest uppercase mt-1">
+      European Health Data Space
+    </p>
+  </div>
+  <div className="p-6">
+    <div className="flex items-center justify-between mb-3">
+      <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+        EHDS Demo
+      </h2>
+      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+        Live
+      </span>
+    </div>
+    <p className="text-sm text-blue-700 dark:text-blue-400 font-medium mb-3">
+      EU Cross-Border Health Data Platform
+    </p>
+    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+      An interactive reference implementation of the European Health Data Space
+      regulation — simulating cross-border health data sharing across EU member
+      states. Built on FHIR R4 and OMOP CDM standards with a Neo4j knowledge
+      graph of 5,300+ nodes and 127 synthetic patient profiles.
+    </p>
+    <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-5">
+      <li className="flex items-start gap-2">
+        <span className="text-blue-500 mt-0.5">✦</span>7 demo personas, 127
+        synthetic patients
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-blue-500 mt-0.5">✦</span>5,300+ knowledge graph
+        nodes (Neo4j)
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-blue-500 mt-0.5">✦</span>FHIR R4 &amp; OMOP CDM
+        compliant
+      </li>
+      <li className="flex items-start gap-2">
+        <span className="text-blue-500 mt-0.5">✦</span>EHDS Art. 3–51 regulation
+        coverage
+      </li>
+    </ul>
+    <a
+      href="https://ma3u.github.io/ehds"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 transition-colors text-sm font-medium"
+      aria-label="Open EHDS Demo"
+    >
+      Open EHDS Demo
+      <svg
+        className="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+
+</div>
+
+---
+
+<div className="mt-10 p-6 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/30 rounded-lg border border-gray-200 dark:border-gray-700">
+  <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">
+    Interested in collaborating?
+  </h3>
+  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
+    Both projects are actively developed and open to beta testers, contributors,
+    and healthcare partners.
+  </p>
+  <a
+    href="/contact"
+    className="inline-flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-white text-white dark:text-gray-900 rounded-md hover:bg-gray-700 dark:hover:bg-gray-100 transition-colors text-sm font-medium"
+  >
+    Get in touch
+  </a>
+</div>

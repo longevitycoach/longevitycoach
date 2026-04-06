@@ -1,0 +1,21 @@
+{
+  "title": "Longevity Coach",
+  "description": "Your Guide to Health & Longevity",
+  "sections": [
+    {
+      "title": "Optimal Metrics",
+      "path": "/optimum",
+      "description": "Track and understand your key health metrics"
+    },
+    {
+      "title": "My Journey",
+      "path": "/journey",
+      "description": "Personal health journey and lessons learned"
+    },
+    {
+      "title": "Contact",
+      "path": "/contact",
+      "description": "Get in touch with questions or collaboration"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+# Site Configuration
+site:
+  title: "Longevity Coach"
+  description: "Companion for your longevity journey"
+  baseURL: "https://longevitycoach.github.io/longevitycoach/"
+  languageCode: "en-us"
+  defaultContentLanguage: "en"
+  enableRobotsTXT: true
+
+# Navigation
+menu:
+  main:
+    - identifier: "docs"
+      name: "Documentation"
+      url: "/docs/"
+      weight: 1
+    - identifier: "components"
+      name: "Components"
+      url: "/components/"
+      weight: 2
+    - identifier: "blog"
+      name: "Blog"
+      url: "/blog/"
+      weight: 3
+
+# Build Configuration
+build:
+  output: "public"
+  cleanURLs: true
+  useResourceCache: true
+
+# Markdown Processing
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: "github"
+    lineNos: true
+
+# Image Processing
+imaging:
+  quality: 75
+  anchor: "smart"
+  resampleFilter: "Box"
+  hint: "photo"
+
+# Performance
+minify:
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+
+# Development
+development:
+  watch: true
+  disableFastRender: false
+  disableBrowserError: false
+
+# Security
+security:
+  enableInlineShortcodes: true
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(GIT)?|APPDATA|TMP|TEMP|TERM|HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMROOT|WSL_INTEROP|WSL_DISTRO_NAME|WSLENV|WT_SESSION|WT_PROFILE_ID|DOCKER_.*|COMPOSE_.*|KUBERNETES_.*|GO.+|CGO_.*|GOPATH|GOROOT|GOPROXY|GONOPROXY|GOPRIVATE|GONOSUMDB|GOMODCACHE|GOPACKAGESDRIVER|GOPACKAGESDEBUG|GODEBUG|GOTRACEBACK|GORACE|GOMAXPROCS|GOGC|GODEBUG|GOTMPDIR|GOCACHE|GOMOD|GOWORK|GOTOOLCHAIN|GOPROXY|GOPRIVATE|GONOPROXY|GONOSUMDB|GOPRIVATE|GONOPROXY|GONOSUMDB|GOPRIVATE|GONOPROXY|GONOSUMDB)$']

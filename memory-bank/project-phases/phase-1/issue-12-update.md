@@ -1,6 +1,14 @@
+---
+title: "Issue 12: Content Addition Plan"
+description: "Content integration plan for reference values, longevity content, and expert methodologies"
+created: 2025-06-04
+status: approved
+---
+
 ## Content Addition Plan
 
 ### 📚 Content Sources Identified
+
 1. **Project Documentation**
    - Project Context & Vision
    - Expert methodologies (Dr. Strunz, Dr. Orfanos-Boeckel)
@@ -14,6 +22,7 @@
 ### 🎯 Content Integration Strategy
 
 #### 1. Reference Values Documentation
+
 - **Source**: GitHub Repository (ReferenceValues.md)
 - **Target**: `/docs/reference-values/`
 - **Format**: Markdown with tables for easy reference
@@ -23,6 +32,7 @@
   - Interpretation guidelines
 
 #### 2. Longevity Content
+
 - **Source**: longevity.md from GitHub
 - **Target**: `/docs/longevity/`
 - **Format**: Structured markdown with sections
@@ -32,6 +42,7 @@
   - Lifestyle interventions
 
 #### 3. Expert Methodologies
+
 - **Source**: Project documentation and external references
 - **Target**: `/docs/methodologies/`
 - **Content**:
@@ -40,11 +51,13 @@
   - Integration with MCP architecture
 
 ### ✅ Completed
+
 - [x] Identified all content sources
 - [x] Created content structure
 - [x] Begun review of reference values
 
 ### 📋 Next Steps
+
 1. **Content Creation**
    - [ ] Draft reference values documentation
    - [ ] Prepare longevity content
@@ -61,15 +74,18 @@
    - [ ] Test all links and references
 
 ### 📅 Timeline
+
 - Content Draft: June 14, 2025
 - Review: June 16, 2025
 - Integration: June 18, 2025
 - Final Review: June 20, 2025
 
 ### 🔗 Related
+
 - [Issue #9: Memory Bank & Static Site](./issue-9-update.md)
-- [Project Vision](./memory-bank/project-vision.md)
+- [Project Vision](../../project-vision.md)
 - [Reference Values Source](https://github.com/ma3u/blood-test/blob/main/public/ReferenceValues.md)
 
 ## Status
+
 📝 In Progress - Content planning and initial drafting

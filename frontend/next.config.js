@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
+/* eslint-disable @typescript-eslint/no-var-requires */
+const withMDX = require('@next/mdx')({
+  extension: /\\.mdx?$/,
+  options: {
+    // If you use remark-gfm, you'll need to use next.config.mjs
+    // as the package is ESM only
+    // https://github.com/remarkjs/remark-gfm#install
+    remarkPlugins: [],
+    rehypePlugins: [],
+    // If you use `MDXProvider`, uncomment the following line.
+    // providerImportSource: "@mdx-js/react",
+  },
+});
 const path = require('path');
 
 // Check if we're building for GitHub Pages
@@ -7,26 +20,30 @@ const isGithubPages = process.env.NODE_ENV === 'production';
 const repoName = 'longevitycoach';
 const basePath = isGithubPages ? `/${repoName}` : '';
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Configure pageExtensions to include md and mdx
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+
   // Base path for GitHub Pages
   basePath: basePath,
   // Asset prefix for static assets
   assetPrefix: basePath,
-  
+
   // Disable image optimization for static export
   images: {
     unoptimized: true,
   },
-  
+
   // Enable static export
   output: 'export',
-  
+
   // Enable React Strict Mode
   reactStrictMode: true,
-  
+
   // Enable SWC minification
   swcMinify: true,
-  
+
   // Webpack configuration
   webpack: (config, { isServer: _isServer }) => {
     // Add path aliases to webpack
@@ -40,11 +57,34 @@ const nextConfig = {
   },
 };
 
-// Log the configuration for debugging
-console.log('Next.js Config:', {
-  basePath: nextConfig.basePath,
-  isGithubPages,
-  nodeEnv: process.env.NODE_ENV
-});
+// Webpack configuration for handling MDX files
+nextConfig.webpack = (config, { isServer: _isServer }) => {
+  // Handle MDX files
+  config.module.rules.push({
+    test: /\.mdx?$/,
+    use: [
+      {
+        loader: '@mdx-js/loader',
+        options: {
+          // Add any MDX options here
+        },
+      },
+    ],
+  });
 
-module.exports = nextConfig;
+  return config;
+};
+
+// Log the configuration for debugging (development only)
+if (process.env.NODE_ENV !== 'production') {
+  console.log('Next.js Config:', {
+    basePath: nextConfig.basePath,
+    assetPrefix: nextConfig.assetPrefix,
+    output: nextConfig.output,
+    images: nextConfig.images,
+    env: process.env.NODE_ENV,
+  });
+}
+
+// Export the configuration with MDX support
+module.exports = withMDX(nextConfig);

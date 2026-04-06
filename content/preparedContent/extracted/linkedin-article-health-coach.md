@@ -111,7 +111,7 @@ Key experts referenced in the article:
 
 ---
 
-*Note: This is an extracted and structured version of the original LinkedIn article. The content has been reorganized for clarity while maintaining the original information and intent.*
+_Note: This is an extracted and structured version of the original LinkedIn article. The content has been reorganized for clarity while maintaining the original information and intent._
 vitamins, amino acids and minerals. The "big blood count" integrates
 two key assessments: the basic blood count and the differential white
 blood cell count, these assess 15-20 hematological parameters that are
@@ -124,7 +124,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 1/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -149,22 +149,23 @@ supplements is often recommended, after regular diagnostics.
 ignored by health insurance companies, even though
 they would be the basis for genuine prevention. Instead,
 we prefer to finance expensive late-stage consequences
+
 - a system that rewards illness and punishes health."
 - Dr. Ulrich Strunz
-Criticism of traditional medicine focuses on the need for more
-comprehensive diagnostics and a balanced diet. Experts emphasize the
-importance of individualized health assessments and adjusting dietary
-recommendations based on modern science.
-I've noticed that many doctors still practice traditional medicine.
-However, specialists in modern oncomolecular medicine are scarce and
-often fully booked, even for those willing to pay all the costs personally.
-To fill this gap, I've started to read the books of these experts and use
-their knowledge as a knowledge base for a multi-agent system. This
-system allows me to integrate modern reference values and upload my
-diagnostic results, providing a more personalized approach to LLM
-management. I am experimenting with various AI systems such as Open
-AI's ChatGPT, Azure AI Foundary, Perplexity AI, Dust.tt, N8N,
-Conversational AI.
+  Criticism of traditional medicine focuses on the need for more
+  comprehensive diagnostics and a balanced diet. Experts emphasize the
+  importance of individualized health assessments and adjusting dietary
+  recommendations based on modern science.
+  I've noticed that many doctors still practice traditional medicine.
+  However, specialists in modern oncomolecular medicine are scarce and
+  often fully booked, even for those willing to pay all the costs personally.
+  To fill this gap, I've started to read the books of these experts and use
+  their knowledge as a knowledge base for a multi-agent system. This
+  system allows me to integrate modern reference values and upload my
+  diagnostic results, providing a more personalized approach to LLM
+  management. I am experimenting with various AI systems such as Open
+  AI's ChatGPT, Azure AI Foundary, Perplexity AI, Dust.tt, N8N,
+  Conversational AI.
 
 Perplexity Spaces define the context, instructions, knowledge
 
@@ -178,7 +179,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 2/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -224,7 +225,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 3/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -272,7 +273,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 4/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -296,7 +297,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 5/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -310,43 +311,44 @@ about following a ketogenic diet. But I also learned on the hard way:
 
 "Keto is like a marriage, it doesn't work if you cheat."
 To enhance my results, I've incorporated several strategies:
+
 1. Intermittent Fasting: I maintain the 16:8 fasting schedule, eating
-my last meal by 6 PM and breaking my fast after 10 AM the next
-day.
-https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-state-buchhorn-roth-ptyfe/
+   my last meal by 6 PM and breaking my fast after 10 AM the next
+   day.
+   https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-state-buchhorn-roth-ptyfe/
 
 6/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
 2. MCT Oil: I use MCT oil before starting and ending my daily fasting
-period, which helps accelerate ketosis and provides quick energy.
+   period, which helps accelerate ketosis and provides quick energy.
 3. Exogenous Ketones: These supplements have been crucial in
-quickly achieving a ketotic state, especially when I'm just starting
-or if I've consumed more carbs than usual.
+   quickly achieving a ketotic state, especially when I'm just starting
+   or if I've consumed more carbs than usual.
 4. Consistent Exercise: I maintain a robust exercise regimen of 1-2
-hours daily, which not only supports my overall health but also
-enhances fat utilization during ketosis.
+   hours daily, which not only supports my overall health but also
+   enhances fat utilization during ketosis.
 5. Bone Broth: I've incorporated nutrient-rich bone broth into my diet.
-It's an excellent source of minerals, collagen, and amino acids,
-supporting joint health and gut function while aligning with
-ketogenic principles.
+   It's an excellent source of minerals, collagen, and amino acids,
+   supporting joint health and gut function while aligning with
+   ketogenic principles.
 6. Bulletproof Coffee: I start my day with a bulletproof coffee,
-blending high-quality espresso with MCT oil and a small amount of
-bone broth. This combination provides a sustained energy boost,
-supports ketosis, and helps me maintain mental clarity throughout
-the morning.
-By the six-week mark, I was thrilled to see a major improvement in my
-metabolic flexibility. My body had adapted to entering ketosis much
-more efficiently, which allowed me to switch between fuel sources with
-ease. This adaptation has been so important for keeping my energy
-levels up and supporting my athletic performance.
-I've found that a flexible approach works well for me. I try to stay in a
-ketogenic state for about 5 out of 7 days each week. This approach
-helps me get the best fat burning and athletic efficiency, while still giving
-me some flexibility in my diet on the weekends.
+   blending high-quality espresso with MCT oil and a small amount of
+   bone broth. This combination provides a sustained energy boost,
+   supports ketosis, and helps me maintain mental clarity throughout
+   the morning.
+   By the six-week mark, I was thrilled to see a major improvement in my
+   metabolic flexibility. My body had adapted to entering ketosis much
+   more efficiently, which allowed me to switch between fuel sources with
+   ease. This adaptation has been so important for keeping my energy
+   levels up and supporting my athletic performance.
+   I've found that a flexible approach works well for me. I try to stay in a
+   ketogenic state for about 5 out of 7 days each week. This approach
+   helps me get the best fat burning and athletic efficiency, while still giving
+   me some flexibility in my diet on the weekends.
 
 After adopting a ketogenic diet, I experienced remarkable results within
 6 weeks. My neurodermatitis completely resolved, as confirmed by a
@@ -368,7 +370,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 7/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -409,7 +411,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 8/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -451,7 +453,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 9/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -494,28 +496,29 @@ innovative solution for regular blood testing and health monitoring. Using
 their app and test centers, individuals can track over 60 biomarkers
 related to nutrition, longevity, hormones, heart health, and more. Here
 are the key features:
+
 1. Aware offers comprehensive blood tests that analyze more than
-twice the biomarkers of a standard blood count. These tests cover
-immune system, kidney, liver, metabolic, hormonal, vitamin, and
-mineral areas. Aware operates on a subscription basis (€179/year
-for two tests), with options for additional specialized tests.
+   twice the biomarkers of a standard blood count. These tests cover
+   immune system, kidney, liver, metabolic, hormonal, vitamin, and
+   mineral areas. Aware operates on a subscription basis (€179/year
+   for two tests), with options for additional specialized tests.
 2. App booking and results are convenient. Test centers are located
-and equipped with private booths. Results are available digitally
-within 48 hours.
+   and equipped with private booths. Results are available digitally
+   within 48 hours.
 3. The Aware App analyzes 54 biomarkers, providing a detailed
-overview of health. Forty-four were within range, while ten were out
-of range. The app displays clear visual indicators.
+   overview of health. Forty-four were within range, while ten were out
+   of range. The app displays clear visual indicators.
 4. Through partnerships like TeleClinic, users can immediately consult
-with healthcare professionals via video.
+   with healthcare professionals via video.
 5. Unlike traditional labs, Aware allows users to track biomarkers over
-time electronically. This feature is invaluable for monitoring trends
-and assessing lifestyle changes.
+   time electronically. This feature is invaluable for monitoring trends
+   and assessing lifestyle changes.
 6. The app provides personalized recommendations based on results.
-https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-state-buchhorn-roth-ptyfe/
+   https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-state-buchhorn-roth-ptyfe/
 
 10/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -546,7 +549,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 11/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -587,7 +590,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 12/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -637,7 +640,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 13/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -672,7 +675,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 14/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -719,7 +722,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 15/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -788,7 +791,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 16/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -893,7 +896,7 @@ https://www.linkedin.com/pulse/build-personalized-health-coach-based-current-sta
 
 17/18
 
-11/06/2025, 19:10
+11/06/2025, 19:10
 
 (5) Build a personalized Health Coach based on the current state of science | LinkedIn
 
@@ -917,4 +920,4 @@ Emily Marquis, NBC-HWC
 
 18/18
 
-
+

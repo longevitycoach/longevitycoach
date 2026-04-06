@@ -3,13 +3,13 @@ title: "Database Architecture"
 description: "Comprehensive documentation of the Longevity Coach database architecture"
 created: 2025-06-02
 updated: 2025-06-11
-authors: 
+authors:
   - name: Longevity Coach Team
     email: dev@longevitycoach.app
-status: active
-related: 
-  - /architecture/api-architecture.md
-tags: 
+status: approved
+related:
+  - ../architecture/api-architecture.md
+tags:
   - database
   - postgresql
   - timescaledb
@@ -19,6 +19,7 @@ tags:
 # Database Architecture
 
 ## Table of Contents
+
 - [Technology Stack](#technology-stack)
 - [Schema Design](#schema-design)
 - [Performance Considerations](#performance-considerations)
@@ -31,6 +32,7 @@ tags:
 ## Technology Stack
 
 ### Primary Database
+
 - **Database**: PostgreSQL 14+ (via Supabase)
 - **Purpose**: Transactional and analytical workloads
 - **Extensions**:
@@ -41,11 +43,13 @@ tags:
   - `postgis`: Geospatial data support
 
 ### Time-series Data
+
 - **Extension**: TimescaleDB
 - **Partitioning**: Time-based and patient-based partitioning
 - **Retention Policy**: 10 years for patient data, configurable per data type
 
 ### Search Capabilities
+
 - PostgreSQL Full-Text Search with `pg_trgm`
 - Vector similarity search for recommendations
 - Custom ranking functions for relevance
@@ -55,87 +59,99 @@ tags:
 ### Core Tables
 
 #### `patients`
+
 Stores patient demographic and consent information.
 
-| Column | Type | Description |
-|--------|------|-------------|
-| id | UUID | Primary key |
-| created_at | TIMESTAMPTZ | Record creation timestamp |
-| updated_at | TIMESTAMPTZ | Last update timestamp |
-| external_id | TEXT | External reference ID (HIPAA compliant) |
-| demographics | JSONB | Patient demographics (name, DOB, etc.) |
-| consents | JSONB | Consent management (GDPR compliance) |
-| settings | JSONB | User preferences and settings |
+| Column       | Type        | Description                             |
+| ------------ | ----------- | --------------------------------------- |
+| id           | UUID        | Primary key                             |
+| created_at   | TIMESTAMPTZ | Record creation timestamp               |
+| updated_at   | TIMESTAMPTZ | Last update timestamp                   |
+| external_id  | TEXT        | External reference ID (HIPAA compliant) |
+| demographics | JSONB       | Patient demographics (name, DOB, etc.)  |
+| consents     | JSONB       | Consent management (GDPR compliance)    |
+| settings     | JSONB       | User preferences and settings           |
 
 **Indexes**:
+
 - Primary key on `id`
 - Unique index on `external_id`
 - GIN index on `demographics`
 
 #### `blood_tests`
+
 Tracks blood test orders and results.
 
-| Column | Type | Description |
-|--------|------|-------------|
-| id | UUID | Primary key |
-| patient_id | UUID | Reference to patients.id |
-| tested_at | TIMESTAMPTZ | When the test was performed |
-| laboratory_id | UUID | Reference to laboratories table |
-| report_url | TEXT | Link to full report |
-| status | ENUM | Test status (pending/processed/analyzed) |
-| metadata | JSONB | Additional test metadata |
+| Column        | Type        | Description                              |
+| ------------- | ----------- | ---------------------------------------- |
+| id            | UUID        | Primary key                              |
+| patient_id    | UUID        | Reference to patients.id                 |
+| tested_at     | TIMESTAMPTZ | When the test was performed              |
+| laboratory_id | UUID        | Reference to laboratories table          |
+| report_url    | TEXT        | Link to full report                      |
+| status        | ENUM        | Test status (pending/processed/analyzed) |
+| metadata      | JSONB       | Additional test metadata                 |
 
 **Indexes**:
+
 - Primary key on `id`
 - Foreign key index on `patient_id`
-| Index on `tested_at` for time-based queries |
-| GIN index on `metadata` |
+  | Index on `tested_at` for time-based queries |
+  | GIN index on `metadata` |
 
 #### `biomarkers` (Timescale Hypertable)
+
 Stores time-series biomarker data with efficient time-based queries.
 
-| Column | Type | Description |
-|--------|------|-------------|
-| id | UUID | Primary key |
-| blood_test_id | UUID | Reference to blood_tests.id |
-| patient_id | UUID | Reference to patients.id (Partition Key) |
-| loinc_code | TEXT | LOINC code for the biomarker |
-| value | NUMERIC | Measured value |
-| unit | TEXT | Measurement unit |
-| reference_range | JSONB | Normal range values |
-| timestamp | TIMESTAMPTZ | Time of measurement (Time Partitioning) |
+| Column          | Type        | Description                              |
+| --------------- | ----------- | ---------------------------------------- |
+| id              | UUID        | Primary key                              |
+| blood_test_id   | UUID        | Reference to blood_tests.id              |
+| patient_id      | UUID        | Reference to patients.id (Partition Key) |
+| loinc_code      | TEXT        | LOINC code for the biomarker             |
+| value           | NUMERIC     | Measured value                           |
+| unit            | TEXT        | Measurement unit                         |
+| reference_range | JSONB       | Normal range values                      |
+| timestamp       | TIMESTAMPTZ | Time of measurement (Time Partitioning)  |
 
 **Indexes**:
+
 - Primary key on `id`
-| Composite index on `(patient_id, loinc_code, timestamp DESC)` |
-| Time-based index on `timestamp` |
-| Foreign key indexes on `patient_id` and `blood_test_id` |
+  | Composite index on `(patient_id, loinc_code, timestamp DESC)` |
+  | Time-based index on `timestamp` |
+  | Foreign key indexes on `patient_id` and `blood_test_id` |
 
 ### Supporting Tables
 
 #### `laboratories`
+
 Information about testing laboratories.
 
 #### `reference_ranges`
+
 Standard reference ranges for biomarkers.
 
 #### `audit_logs`
+
 Audit trail for all data modifications.
 
 ## Performance Considerations
 
 ### Indexing Strategy
+
 - **B-tree** for equality and range queries
 - **GIN** for JSONB columns and full-text search
 - **BRIN** for large time-series data
 - **Partial indexes** for filtered queries
 
 ### Query Optimization
+
 - Materialized views for common aggregations
 - Query plan analysis for slow queries
 - Connection pooling for better resource utilization
 
 ### Partitioning
+
 - Time-based partitioning for time-series data
 - List partitioning by patient_id for data isolation
 - Automated partition management with retention policies
@@ -143,27 +159,32 @@ Audit trail for all data modifications.
 ## Backup & Recovery
 
 ### Backup Strategy
+
 - **Daily full backups** with PITR (Point-in-Time Recovery)
 - **WAL archiving** for continuous backup
 - **Off-site storage** with encryption
 
 ### Recovery Objectives
+
 - **RPO (Recovery Point Objective)**: 5 minutes
 - **RTO (Recovery Time Objective)**: 15 minutes
 
 ## Security
 
 ### Data Encryption
+
 - **At rest**: AES-256 encryption
 - **In transit**: TLS 1.3
 - **Field-level encryption** for sensitive data
 
 ### Access Control
+
 - Row-level security (RLS) policies
 - Role-based access control (RBAC)
 - Principle of least privilege
 
 ### Audit Trail
+
 - All data modifications logged
 - Sensitive operations require MFA
 - Regular security reviews
@@ -171,11 +192,13 @@ Audit trail for all data modifications.
 ## Monitoring
 
 ### Metrics Collection
+
 - Query performance
 - Resource utilization
 - Replication lag
 
 ### Alerting
+
 - Performance degradation
 - Failed queries
 - Security events
@@ -183,11 +206,13 @@ Audit trail for all data modifications.
 ## Migrations
 
 ### Version Control
+
 - All schema changes in migration files
 - Backward compatibility maintained
 - Zero-downtime deployments
 
 ### Tools
+
 - Flyway for migration management
 - Schema diff tools for review
 - Automated testing of migrations
@@ -195,32 +220,40 @@ Audit trail for all data modifications.
 ## Best Practices
 
 ### Naming Conventions
+
 - snake_case for tables and columns
 - Prefixes for related tables (e.g., `auth_users`)
 - Consistent naming across foreign keys
 
 ### Data Types
+
 - Appropriate data types for all columns
 - Domain types for validation
 - Enums for fixed value sets
 
 ### Documentation
+
 - Column-level comments
 - Schema documentation in source control
 - Data dictionary
 
 ## Related Documents
-- [API Architecture](../api-architecture.md)
-- [Deployment Guide](../../deployment/guide.md)
-- [Security Policy](../../security/policy.md)
+
+- [API Architecture](../architecture/api-architecture.md)
+- [GitHub Pages Setup](../decisions/dec-001-github-pages-setup.md)
+- [Security Best Practices](../security/security-best-practices.md)
 
 ---
+
 Last Updated: June 11, 2025
+
 - `tags` TEXT[]
+- `status` TEXT DEFAULT 'approved'
 
 ### Performance Optimizations
 
 #### Indexing Strategy
+
 ```sql
 -- Time-series optimization
 CREATE INDEX idx_biomarkers_patient_time ON biomarkers(patient_id, timestamp DESC);
@@ -231,7 +264,7 @@ CREATE INDEX idx_biomarkers_patient_loinc ON biomarkers(patient_id, loinc_code, 
 
 -- Full-text search
 CREATE INDEX idx_patients_search ON patients USING GIN(
-    to_tsvector('english', 
+    to_tsvector('english',
         COALESCE(demographics->>'firstName', '') || ' ' ||
         COALESCE(demographics->>'lastName', '') || ' ' ||
         COALESCE(demographics->>'email', '')
@@ -240,6 +273,7 @@ CREATE INDEX idx_patients_search ON patients USING GIN(
 ```
 
 #### Partitioning
+
 ```sql
 -- Convert to hypertable for time-series data
 SELECT create_hypertable(
@@ -255,6 +289,7 @@ SELECT create_hypertable(
 ## Security Implementation
 
 ### Row Level Security (RLS)
+
 ```sql
 -- Enable RLS on all tables
 ALTER TABLE patients ENABLE ROW LEVEL SECURITY;
@@ -269,13 +304,14 @@ CREATE POLICY patient_own_data ON patients
 CREATE POLICY patient_own_blood_tests ON blood_tests
     FOR ALL
     USING (EXISTS (
-        SELECT 1 FROM patients 
-        WHERE patients.id = blood_tests.patient_id 
+        SELECT 1 FROM patients
+        WHERE patients.id = blood_tests.patient_id
         AND auth.uid() = patients.id
     ));
 ```
 
 ### Data Retention
+
 ```sql
 -- Automated data retention policies
 SELECT add_retention_policy('biomarkers', INTERVAL '10 years');
@@ -293,6 +329,7 @@ SELECT add_compression_policy('biomarkers', INTERVAL '30 days');
 ## Backup Strategy
 
 ### Continuous Archiving
+
 ```yaml
 # postgresql.conf
 wal_level = replica
@@ -302,6 +339,7 @@ archive_timeout = 3600
 ```
 
 ### Point-in-Time Recovery
+
 ```bash
 # Base backup
 wal-g backup-push $PGDATA
@@ -313,6 +351,7 @@ wal-g backup-fetch $PGDATA LATEST
 ## Monitoring
 
 ### Key Metrics
+
 - Query performance
 - Replication lag
 - Cache hit ratio
@@ -320,6 +359,7 @@ wal-g backup-fetch $PGDATA LATEST
 - Locks
 
 ### Alert Thresholds
+
 - CPU > 80% for 5 minutes
 - Replication lag > 5s
 - Cache hit ratio < 90%

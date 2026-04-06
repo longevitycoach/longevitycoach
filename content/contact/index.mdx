@@ -1,0 +1,145 @@
+---
+title: "Contact Us"
+description: "Get in touch with the Longevity Coach team for questions, collaborations, or consultations"
+created: 2025-06-23
+updated: 2025-06-23
+authors: [ma3u]
+tags: [contact, consultation, support]
+status: draft
+---
+
+import { Button } from "@/components/ui/button";
+
+# Get In Touch
+
+Have questions about longevity, health optimization, or our services? We'd love to hear from you!
+
+## Contact Information
+
+- **Email**: [contact@longevitycoach.app](mailto:contact@longevitycoach.app)
+- **Location**: Based in Switzerland, serving clients worldwide
+- **Social Media**:
+  - [Twitter](https://twitter.com/longevitycoach)
+  - [LinkedIn](https://linkedin.com/company/longevity-coach)
+
+## Send Us a Message
+
+Fill out the form below and we'll get back to you as soon as possible.
+
+<div className="mt-8 bg-white p-6 rounded-lg shadow-md">
+  <form name="contact" method="POST" data-netlify="true" className="space-y-6">
+    <div>
+      <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+        Name
+      </label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required
+        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+      />
+    </div>
+
+    <div>
+      <label
+        htmlFor="email"
+        className="block text-sm font-medium text-gray-700"
+      >
+        Email
+      </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+      />
+    </div>
+
+    <div>
+      <label
+        htmlFor="subject"
+        className="block text-sm font-medium text-gray-700"
+      >
+        Subject
+      </label>
+      <select
+        id="subject"
+        name="subject"
+        className="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-blue-500 focus:outline-none focus:ring-blue-500"
+        defaultValue="General Inquiry"
+      >
+        <option>General Inquiry</option>
+        <option>Consultation Request</option>
+        <option>Partnership Opportunity</option>
+        <option>Media Inquiry</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label
+        htmlFor="message"
+        className="block text-sm font-medium text-gray-700"
+      >
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows={4}
+        required
+        className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+        placeholder="How can we help you?"
+      ></textarea>
+    </div>
+
+    <div className="flex items-center">
+      <Button
+        type="submit"
+        className="bg-blue-600 hover:bg-blue-700 text-white"
+      >
+        Send Message
+      </Button>
+      <p className="ml-4 text-sm text-gray-500">
+        We'll get back to you within 1-2 business days.
+      </p>
+    </div>
+  </form>
+</div>
+
+## Consultation Services
+
+Interested in personalized longevity coaching? Book a free discovery call to discuss how we can help you optimize your health and longevity.
+
+<div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg">
+  <h3 className="text-2xl font-bold mb-4">Schedule a Free Discovery Call</h3>
+  <p className="mb-4">
+    Let's discuss your health goals and how we can help you achieve them.
+  </p>
+  <Button
+    href="https://calendly.com/longevitycoach/discovery"
+    className="bg-green-600 hover:bg-green-700 text-white"
+  >
+    Book Now
+  </Button>
+</div>
+
+## Frequently Asked Questions
+
+### How soon can I expect a response?
+
+We typically respond to all inquiries within 1-2 business days.
+
+### Do you offer one-on-one coaching?
+
+Yes, we offer personalized longevity coaching programs. Book a discovery call to learn more.
+
+### Can you help interpret my lab results?
+
+Yes, we can help you understand your lab results and create a plan to optimize your biomarkers.
+
+### Where are you located?
+
+We're based in Switzerland but work with clients worldwide through virtual consultations.

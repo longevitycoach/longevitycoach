@@ -4,7 +4,7 @@ description: "Evaluation and selection of UI component libraries for the fronten
 created: 2025-06-11
 updated: 2025-06-20
 authors: ""
-status: "proposed"
+status: "review"
 related: ["dec-001-github-pages-setup"]
 tags: ["frontend", "ui", "components", "design-system"]
 ---
@@ -51,33 +51,41 @@ After evaluating the current setup and alternatives, we will:
 ## Evaluation of Current Libraries
 
 ### Headless UI
+
 **Pros**:
+
 - Unstyled, accessible components
 - Built by the Tailwind CSS team
 - Excellent TypeScript support
 - Lightweight and focused
 
 **Cons**:
+
 - Limited component set
 - Some components still in development
 
 ### Radix UI
+
 **Pros**:
+
 - Unstyled, accessible primitives
 - Excellent keyboard navigation and focus management
 - Built with composition in mind
 
 **Cons**:
+
 - Multiple packages to manage
 - Some learning curve for complex components
 
 ### Icon Libraries
+
 - **Hero Icons**: Good for general UI icons
 - **Lucide**: More comprehensive icon set with good customization
 
 ## Alternatives Considered
 
 ### Component Libraries
+
 1. **Chakra UI**
    - Comprehensive but heavier than current setup
    - Includes its own styling solution (Emotion)
@@ -94,12 +102,14 @@ After evaluating the current setup and alternatives, we will:
 ## Consequences
 
 ### Benefits
+
 - **Consistency**: Standardized approach to components
 - **Performance**: Lightweight, tree-shakeable libraries
 - **Maintainability**: Clear separation of concerns
 - **Accessibility**: Built-in a11y features
 
 ### Trade-offs
+
 - **Learning Curve**: Multiple libraries to learn
 - **Integration**: Need to ensure libraries work well together
 - **Bundle Size**: Multiple small libraries vs. one large one

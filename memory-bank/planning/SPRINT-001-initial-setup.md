@@ -3,9 +3,9 @@ title: "Sprint 001: Initial Setup & Foundation"
 description: "Sprint planning documentation for initial setup phase"
 created: 2025-06-11
 updated: 2025-06-20
-authors: 
-status: active
-related: 
+authors:
+status: approved
+related:
   - "Milestone: Sprint 1: Initial Setup & Foundation (#1)"
 tags:
   - sprint-1
@@ -21,6 +21,7 @@ tags:
 > **Development Process**: This sprint follows our [GitHub Sprint Management SDLC](./sdlc-001-github-sprint-management.md) for all development activities.
 
 ## Sprint Details
+
 - **Duration:** 2 weeks (2025-06-12 to 2025-06-25)
 - **Goal:** Establish development environment and implement core infrastructure
 
