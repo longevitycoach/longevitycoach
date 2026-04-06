@@ -99,7 +99,14 @@ export function FormField<TFieldValues extends FieldValues>({
   const fieldState = getFieldState(error);
   const errorMessage = getFieldError(error);
 
-  const renderInput = (field: Record<string, unknown> & { ref?: unknown }) => {
+  const renderInput = (field: {
+    onChange: (...args: unknown[]) => void;
+    onBlur: () => void;
+    value: unknown;
+    name: string;
+    ref?: unknown;
+    [key: string]: unknown;
+  }) => {
     const { ref, ...fieldProps } = field;
     const commonProps = {
       ...fieldProps, // Spread field props first to ensure proper event handlers are included

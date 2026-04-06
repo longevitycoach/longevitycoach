@@ -27,13 +27,16 @@ const projects = [
     gradient: 'from-teal-800 to-teal-600',
     accentColor: 'teal',
     icon: (
-      <img
-        src="/assets/images/twobreath_icon.svg"
-        alt="TwoBreath logo"
-        width={96}
-        height={64}
-        className="opacity-90"
-      />
+      <>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/images/twobreath_icon.svg"
+          alt="TwoBreath logo"
+          width={96}
+          height={64}
+          className="opacity-90"
+        />
+      </>
     ),
   },
   {
