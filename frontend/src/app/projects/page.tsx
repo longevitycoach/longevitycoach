@@ -114,12 +114,12 @@ const projects: Project[] = [
   {
     name: 'EHDS Demo',
     slug: 'ehds',
-    tagline: 'EU Cross-Border Health Data Platform',
+    tagline: 'Interactive Demo & Integration Platform',
     status: 'Live',
     url: 'https://ma3u.github.io/ehds',
     urlLabel: 'Open Demo',
     description:
-      'An interactive reference implementation of the European Health Data Space regulation — simulating cross-border health data sharing across EU member states. Built on FHIR R4 and OMOP CDM standards with a Neo4j knowledge graph of 5,300+ nodes and 127 synthetic patient profiles.',
+      'An EHDS integration platform you can run, fork, and wire into your own stack. It shows how the regulation enables secure cross-border health data sharing — publishing clinical datasets, negotiating access contracts under ODRL, and transferring FHIR / OMOP data through the Dataspace Protocol. Every flow is exposed as a REST API, backed by a Neo4j knowledge graph of 5,300+ nodes and 127 synthetic patient profiles.',
     features: [
       '7 demo personas, 127 synthetic patients',
       '5,300+ knowledge graph nodes (Neo4j)',
@@ -140,8 +140,8 @@ const projects: Project[] = [
     accentColor: 'blue',
     icon: (
       <div className="flex flex-col items-center gap-2">
-        <div className="flex gap-2">
-          {['AT', 'DE', 'FR', 'PL', 'ES'].map((c) => (
+        <div className="flex flex-wrap gap-2 justify-center">
+          {['FHIR R4', 'OMOP CDM', 'ODRL', 'HealthDCAT-AP'].map((c) => (
             <span key={c} className="px-2 py-1 bg-white/10 rounded text-white text-xs font-mono">
               {c}
             </span>
