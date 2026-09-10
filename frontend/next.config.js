@@ -15,6 +15,12 @@ const nextConfig = {
 
   // Base path for GitHub Pages
   basePath: basePath,
+  // Exposed so components can prefix plain asset URLs. next/image does not
+  // apply basePath when images.unoptimized is set, so public/ assets have to
+  // be prefixed by hand.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   // Asset prefix for static assets
   assetPrefix: basePath,
 
